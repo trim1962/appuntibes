@@ -1,0 +1,144 @@
+% !TEX encoding = UTF-8 Unicode
+% !TEX TS-program = pdflatex
+% !TEX root = appuntibes.tex
+% !TEX spellcheck = it-IT
+
+\documentclass[draftdate=true,oneside,crop=false,10pt,sctitles]{suftesi}
+\usepackage{ifxetex}
+\ifxetex
+\usepackage{fontspec}
+\setmainfont[Ligatures=TeX,Numbers=OldStyle]{Junicode}
+%\setmainfont{Lexia}
+\usepackage{polyglossia}
+\setmainlanguage{italian}
+\PolyglossiaSetup{italian}{indentfirst=false}
+\setotherlanguages{english}
+\else
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english, italian]{babel}
+\fi
+%\makeatletter
+%\titlecontents{section}
+%[\SUF@tocindent@sec]
+%{}
+%{\hskip-\dimexpr(\SUF@label@section+1em)%
+%	\makebox[\SUF@label@section][l]{\thecontentslabel}\hspace*{2em}}
+%{\hskip-\dimexpr(\SUF@label@section+1em)%
+%	\makebox[\SUF@label@section][l]{\thecontentslabel}\hspace*{1em}}
+%{\ifsuftesi@article\SUF@chaptitlerule%
+%	\else\SUF@titlerule\fi\contentspage}
+%\makeatother
+%\toclabelspace{1.5em}
+\usepackage{varioref}
+\usepackage{eurosym}
+% % % % % % modifica suftesi
+\makeatletter
+\def\SUF@versionstring{\texttt{Versione del \today}}
+\makeatother
+% % % % % % % 
+\usepackage[copyright]{ccicons}
+\title{\textbf{{\LARGE B}}isogni\xheadbreak \textbf{{\LARGE E}}ducativi\xheadbreak \textbf{{\LARGE S}}peciali }
+\author{Claudio Duchi}
+\date{\today}
+\usepackage{pdfpages}
+\usepackage[autostyle,italian=guillemets]{csquotes}
+\usepackage[style=philosophy-verbose,backend=biber,sorting=ydnt,hyperref,indexing,inbeforejournal=true]{biblatex}
+\usepackage{imakeidx}
+\makeindex
+%\AtEveryCite{\togglefalse{bbx:url}}
+%
+%\renewbibmacro*{url+urldate}{%
+%	\iftoggle{bbx:url}{%
+%		\printfield{url}}{}%
+%	\iffieldundef{urlyear}
+%	{}
+%	{\setunit*{\addspace}%
+%		\printurldate}}
+\addbibresource{../bibliografia_bes/bes.bib}
+%\defbibheading{leg}{\section{Leggi}}
+%\defbibheading{om}{\section{Ordinanze}}
+%\defbibheading{cm}{\section{Circolari}}
+%\defbibheading{sen}{\section{Sentenze}}
+%\defbibheading{dpcm}{\section{Decreti Presidenza Consiglio del Ministri}}
+%\defbibheading{lin}{\section{Linee Guida}}
+%\defbibheading{dpr}{\section{Decreti Presidente della Repubblica}}
+%\defbibheading{dl}{\section{Decreti legge}}
+%\defbibheading{alt}{\section{Altro}}
+%\defbibheading{risorsa}{\section{Risorse}}
+%\defbibheading{sito}{\section{Siti internet}}
+%\defbibheading{articolo}{\section{Articoli}}
+\usepackage{hyperref}
+\hypersetup{%
+	colorlinks=true,
+	citecolor=blue,
+	pdfauthor={Claudio Duchi},%
+	pdftitle={Bisogni Educativi Speciali},%
+	pdfsubject={BES},%
+	pdfcreator={Claudio Duchi},
+	colorlinks,%
+	%draft=true
+}
+\input{../articoliBes/glossario}
+\newcommand{\mancatesto}{[\dots]}
+\newcommand{\caporali}[1]{«#1»}
+\newcommand{\cita}[1]{«#1»}
+\newcommand{\cit}[1]{‘‘#1’’}
+\newcommand{\citi}[1]{‘#1’}
+\begin{document}
+\frontmatter
+\maketitle
+\colophon[Windows 7]{Claudio Duchi}{Quest'opera è stata rilasciata con licenza Creative Commons Attribuzione - Non commerciale - Condividi allo stesso modo 3.0 Unported. Per leggere una copia della licenza visita il sito web\ \url{http://creativecommons.org/licenses/by-nc-sa/3.0/} o spedisci una lettera a Creative Commons, 171 Second Street, Suite 300, San Francisco, California, 94105, USA.\par \ccbyncsaeu}
+\tableofcontents
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\mainmatter
+\input{introduzione}
+\input{ConsiglioDiClasse}
+\input{CosaFalaScuola}
+\backmatter
+%\nocite{*}
+%\cleardoublepage
+%\phantomsection
+\appendixpage
+\include{direttiva27dic2012}
+\include{cm8_2013}
+\include{ra_140_2012}
+\include{Modello_Piano_Annuale_Inclusione}
+\include{dpcm23_febbraio_2006}
+\include{tar_liguria_sentenza1178_2012}
+\include{tar_Umbria_sentenza_329_2011}
+\include{tar_Toscana_sentenza_346_2013}
+
+\include{legge53_2003}
+\include{lineeGuidaStudentiStranieri}
+%include{Legge289_02}
+
+\include{schema_bes}
+\include{regolamentoGLI}
+\include{BES2PUBB}
+%\chapter{Riferimenti}
+%\chapter{Riferimenti}
+\addcontentsline{toc}{chapter}{\bibname}
+\printbibliography
+%\printbibliography[heading=leg,keyword=leg]
+%\printbibliography[heading=dl,keyword=dl]
+%\printbibliography[heading=dpr,keyword=dpr]
+%\printbibliography[heading=dpcm,keyword=dpcm]
+%\printbibliography[heading=om,keyword=om]
+%\printbibliography[heading=cm,keyword=cm]
+%\printbibliography[heading=sen,keyword=sen]
+%\printbibliography[heading=lin,keyword=lin]
+%\printbibliography[heading=risorsa,keyword=risorsa]
+%\printbibliography[heading=sito,keyword=sito]
+%\printbibliography[heading=articolo,keyword=art]
+%\printbibliography[heading=alt,keyword=alt]
+\cleardoublepage
+\phantomsection
+\glsaddall
+\printglossaries
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\indexname}
+\printindex
+\end{document}
